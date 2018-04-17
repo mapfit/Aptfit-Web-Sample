@@ -1,0 +1,28 @@
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Real Estate Demo</title>
+        <link href="http://cdn.mapfit.com/v2-3/assets/css/mapfit.css" rel='stylesheet' />
+        <link href="./reset.css" rel='stylesheet'/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body  class="container-fluid h-100 d-flex flex-column" >
+        <img src="./images/pngs/git-logo.png" width="28px" height="28px" id="git-link" title="Find this project on GitHub">
+        <div id="top-bar"class = "row" >
+            <div class = "col-sm-12 col-lg-12 col-md-12"><h1 id="app-header">Aptfit</h1><span>Sample Apartment Finder</span></div>
+        </div>
+        <div id="second-bar" class = "row" >
+          <div class = "col-sm-12 col-lg-12 col-md-12"><h2> New York City </h2><span> Select a neighborhood </span></div>
+        </div>
+        <div class="row h-100">
+            <div class= "col-sm-12 col-lg-12 col-md-12" id="mapfit"></div>
+        </div>
+        <script src="https://cdn.mapfit.com/v2-3/assets/js/tetragon.js"></script>
+        <script src="http://cdn.mapfit.com/v2-3/assets/js/mapfit.js"></script>
+        <script src="./real-estate-demo.json"></script>
+        <script src="./vars.js"></script>
+        <script src="./real-estate-demo.js"></script>
+    </body>
+</html>

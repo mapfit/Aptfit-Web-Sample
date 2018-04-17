@@ -1,0 +1,124 @@
+@font-face{
+    font-family: Aktiv Grotesk;
+    src: url('./fonts/AktivGroteskBold.ttf') format('truetype');
+    font-weight:  bold;
+  }
+  
+  @font-face{
+    font-family: Aktiv Grotesk;
+    src: url('./fonts/AktivGrotesk.ttf') format('truetype') ;
+    font-weight: normal;
+  }
+  
+  @font-face{
+    font-family: Aktiv Grotesk;
+    src: url('./fonts/AktivGroteskLight.ttf') format('truetype') ;
+    font-weight: 100;
+  }
+  
+  @font-face{
+      font-family: Aktiv Grotesk;
+      src: url('./fonts/AktivGroteskMediumItalic.ttf') format('truetype') ;
+      font-weight: normal;
+      font-style: italic;
+  }
+  
+  @font-face{
+      font-family: Aktiv Grotesk;
+      src: url('./fonts/AktivGroteskMedium.ttf') format('truetype') ;
+      font-weight: 500;
+  }
+  
+  @font-face{
+      font-family: Aktiv Grotesk;
+      src: url('./fonts/AktivGroteskLightItalic.ttf') format('truetype') ;
+      font-weight: 100;
+      font-style: italic;
+  }
+
+  @font-face{
+    font-family: Harmonia;
+    src: url('./fonts/HarmoniaBold.ttf') format('truetype') ;
+    font-weight: 700;
+  }
+
+  @font-face{
+    font-family: Harmonia;
+    src: url('./fonts/HarmoniaSansStd-SemiBd.otf') format('opentype') ;
+    font-weight: 600;
+  }
+
+  @font-face{
+    font-family: Heebo;
+    src: url('./fonts/Heebo-Regular.ttf') format('truetype') ;
+  }
+
+  @font-face{
+    font-family: Heebo;
+    src: url('./fonts/Heebo-Bold.ttf') format('truetype') ;
+    font-weight: 700;
+  }
+
+  @font-face{
+    font-family: Heebo;
+    src: url('./fonts/Heebo-Medium.ttf') format('truetype') ;
+    font-weight: 500;
+  }
+
+#mapfit{
+    width: 100%;
+    height: 100%;
+}
+
+body,html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Harmonia;
+}
+
+#top-bar{
+    padding: 10px 12px;
+    border: solid 1px #e8eaeb;
+}
+
+#second-bar{
+    padding: 10px 12px 10px  12px;
+    border: solid 1px #e8eaeb;
+}
+
+#second-bar > div > h2{
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    font-family: Harmonia;
+    font-weight: 600px;
+    margin-right: 38px;
+}
+
+#second-bar > div > span{
+    color: #9a9ba3;
+    font-size: 12px;
+}
+#top-bar > div > span{
+    color: #9a9ba3;
+    font-size: 19px;
+}
+#app-header{
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    font-family: Harmonia;
+    font-weight: 600px;
+    margin-right: 40px;
+
+}
+
+#git-link{
+    position: absolute;
+    z-index: 600;
+    right: 12px;
+    top: 12px;
+}
