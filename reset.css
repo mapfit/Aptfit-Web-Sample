@@ -49,6 +49,11 @@
   }
 
   @font-face{
+    font-family: Harmonia;
+    src: url('./fonts/HarmoniaSansStd-Regular.otf') format('opentype') ;
+  }
+
+  @font-face{
     font-family: Heebo;
     src: url('./fonts/Heebo-Regular.ttf') format('truetype') ;
   }
@@ -70,6 +75,10 @@
     height: 100%;
 }
 
+#style-type{
+    font-weight: 600;
+}
+
 body,html{
     margin: 0;
     width: 100%;
@@ -80,11 +89,13 @@ body,html{
 #top-bar{
     padding: 10px 12px;
     border: solid 1px #e8eaeb;
+    min-height: 50px;
 }
 
 #second-bar{
     padding: 10px 12px 10px  12px;
     border: solid 1px #e8eaeb;
+    min-height: 43px;
 }
 
 #second-bar > div > h2{
@@ -93,7 +104,7 @@ body,html{
     letter-spacing: 0.5px;
     color: #000000;
     font-family: Harmonia;
-    font-weight: 600px;
+    font-weight: 600;
     margin-right: 38px;
 }
 
@@ -111,7 +122,7 @@ body,html{
     letter-spacing: 0.5px;
     color: #000000;
     font-family: Harmonia;
-    font-weight: 600px;
+    font-weight: 600;
     margin-right: 40px;
 
 }
@@ -119,6 +130,239 @@ body,html{
 #git-link{
     position: absolute;
     z-index: 600;
-    right: 12px;
+    right: 25px;
     top: 12px;
 }
+
+#git-link:hover{
+    cursor: pointer;
+}
+
+#style-btn{
+    display: inline-block;
+    float: right;
+    background-color: #f0f1ff;
+    border-radius: 3px;
+    height: auto;
+    width: auto;
+    padding: 5px 6px;
+    font-family: Harmonia;
+}
+
+#style-btn > span{
+    display: inline-block;
+    font-size: 12px;
+    height: auto;
+    color: #4353ff;
+    margin-right: 10px;
+}
+
+#style-btn > img{
+    display: inline-block;
+    margin-top: 2px;
+}
+
+#style-btn:hover{
+    cursor: pointer;
+}
+
+#listings{
+    list-style: none;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin-left: 0;
+    padding: 0;
+    font-family: Harmonia;
+    font-weight: 600;
+}
+
+#listings > li > h3{
+    font-size: 16px;
+    margin-left: 7px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: 600;
+}
+
+#listings > li > img{
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+#listings > li {
+    display: inline-block;
+    margin: 2.3%;
+    width: 45%;
+    height: 325px;
+    border-radius: 6px;
+    border: solid 0.5px #e8eaeb;
+}
+
+#listings > li > span{
+    color: #9a9ba3;
+    margin-left: 7px;
+    
+}
+
+#listings > li > span:nth-of-type(2){
+    color: #000000;
+    display: block;
+    margin-top: 5%;
+}
+
+
+#listings > li > span:last-of-type{
+    font-weight: normal;
+}
+#view-type{
+    padding: 0;
+}
+
+
+.divity > img{
+   position: relative;
+   height: 40px; 
+   top: -30px;
+   left: -30px;
+}
+
+.divity > span{
+    position: relative;
+    color: white;
+    top: -66px;
+    left: -12px; 
+}
+
+.divity > div{
+    position: absolute;
+    min-width: 400px;
+    width: auto;
+    /* padding: 7px;
+    padding-left: 14px; */
+    box-shadow: 0 0 5px 0 rgba(19, 40, 54, 0.2);
+    border-radius: 6px;
+    background-color: white;
+    top: -200px;
+    left: -150px; 
+}
+
+.divity > div > img{
+    display: inline-block;
+    margin-bottom: 20px; 
+    margin-left: 14px;
+}
+.divity > div > div{
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.divity > div > div > span{
+    font-family: Harmonia;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+}
+
+.divity > div > div > span:nth-of-type(2){
+    color: #9a9ba3;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#detail{
+    display: none;
+    height: auto;
+}
+
+#detail > p{
+    margin-left: 330px;
+    color: #9a9ba3;
+    font-family: Harmonia;
+}
+
+#detail > h2:nth-of-type(2){
+    margin-left: 330px;
+    margin-top: 40px;
+    font-family: Harmonia;
+    font-weight: 600;
+
+}
+#detail-price{
+    margin-left: 330px;
+    margin-right: 130px;
+    margin-bottom: 30px;
+    display: inline-block;
+    font-family: Harmonia;
+}
+
+#detail-neighborhood{
+    margin-left: 330px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    display: block;
+    color: #9a9ba3;
+    font-family: Harmonia;
+}
+footer{
+  width: 100%;
+  text-align: center;  
+  bottom: 0px;
+  
+}
+
+footer > p:first-of-type{
+    color: #4353ff;
+    font-weight: 600;
+}
+
+footer > p:nth-of-type(2){
+    color: #9a9ba3;
+    font-family: Harmonia;
+    font-weight: 600;
+}
+
+#detail-location{
+    font-size: 24px;
+    margin-left: 330px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: Harmonia;
+    font-weight: 600;
+}
+
+#detail-map{
+    height: 400px;
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 142px;
+    margin-left: 330px;
+}
+
+#detail-image{
+    display: block;
+    margin-left: 330px;
+    width: 800px;
+}
+
+#room-specs{
+    font-family: Harmonia;
+}
+
+#selection{
+    color: black;
+}
+
+#listing-location{
+    font-weight: 600;
+    margin-left: 30px;
+    color: black !important;
+}
+
+#app-header:hover{
+    cursor: pointer;
+}
+
+
