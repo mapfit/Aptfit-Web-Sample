@@ -83,7 +83,12 @@ body,html{
     margin: 0;
     width: 100%;
     height: 100%;
+    min-width: 466px;
     font-family: Harmonia;
+}
+
+#view-type{
+    overflow: auto;
 }
 
 d{
@@ -92,15 +97,15 @@ d{
 }
 
 #top-bar{
-    padding: 10px 12px;
+    padding: 0.75rem 0.75rem;
     border: solid 1px #e8eaeb;
     min-height: 50px;
 }
 
 #second-bar{
-    padding: 10px 12px 10px  12px;
+    padding: 0.65rem 0.65rem;
     border: solid 1px #e8eaeb;
-    min-height: 43px;
+    min-height: 50px;
 }
 
 #second-bar > div > h2{
@@ -110,7 +115,7 @@ d{
     color: #000000;
     font-family: Harmonia;
     font-weight: 600;
-    margin-right: 38px;
+    margin-right: 1rem;
 }
 
 #second-bar > div > span{
@@ -128,15 +133,13 @@ d{
     color: #000000;
     font-family: Harmonia;
     font-weight: 600;
-    margin-right: 40px;
+    margin-right: 1rem;
 
 }
 
 #git-link{
-    position: absolute;
-    z-index: 600;
-    right: 25px;
-    top: 12px;
+    display: inline-block;
+    float: right;
 }
 
 #git-link:hover{
@@ -152,6 +155,7 @@ d{
     width: auto;
     padding: 5px 6px;
     font-family: Harmonia;
+    vertical-align: middle;
 }
 
 #style-btn > span{
@@ -185,8 +189,8 @@ d{
 #listings > li > h3{
     font-size: 16px;
     margin-left: 14px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 14px;
+    margin-bottom: 6px;
     font-weight: 600;
 }
 
@@ -208,7 +212,7 @@ d{
 #listings > li > .clickable{
     height: 4px;
     top: 0;
-    width: 431px;
+    width: 100%;
     background-color: #4353ff;
     z-index: 300;
     content: "";
@@ -227,7 +231,7 @@ d{
 #listings > li > span:nth-of-type(2){
     color: #000000;
     display: block;
-    margin-top: 5%;
+    margin-top: 6px;
 }
 
 
@@ -263,10 +267,10 @@ d{
     box-shadow: 0 0 5px 0 rgba(19, 40, 54, 0.2);
     border-radius: 6px;
     background-color: white;
-    /* top: -155px; */
-    left: -190px; 
     height: 95px;
-    bottom: 46px;
+    /* top: -155px; */
+    left: -190px;
+    bottom: 186px;
     
 }
 
@@ -278,7 +282,7 @@ d{
 .divity > div > div{
     display: inline-block;
     position: absolute;
-    margin-left: 20px;
+    margin-left: 87px;
     width: auto;
     
 }
@@ -303,20 +307,20 @@ d{
 }
 
 #detail > p{
-    margin-left: 330px;
+    margin-left: 17.4%;
     color: #9a9ba3;
     font-family: Harmonia;
 }
 
 #detail > h2:nth-of-type(2){
-    margin-left: 330px;
+    margin-left: 17.4%;
     margin-top: 40px;
     font-family: Harmonia;
     font-weight: 600;
 
 }
 #detail-price{
-    margin-left: 330px;
+    margin-left: 17.4%;
     margin-right: 130px;
     margin-bottom: 30px;
     display: inline-block;
@@ -324,7 +328,7 @@ d{
 }
 
 #detail-neighborhood{
-    margin-left: 330px;
+    margin-left: 17.4%;
     margin-bottom: 40px;
     margin-top: 25px;
     display: block;
@@ -351,7 +355,7 @@ footer > p:nth-of-type(2){
 
 #detail-location{
     font-size: 24px;
-    margin-left: 330px;
+    margin-left: 17.4%;
     margin-top: 30px;
     margin-bottom: 20px;
     font-family: Harmonia;
@@ -359,17 +363,18 @@ footer > p:nth-of-type(2){
 }
 
 #detail-map{
-    height: 400px;
-    width: 800px;
+    height: 45%;
+    width: 50%;
     margin: 0 auto;
     margin-bottom: 142px;
-    margin-left: 330px;
+    margin-left: 17.4%;
 }
 
 #detail-image{
     display: block;
-    margin-left: 330px;
-    width: 800px;
+    margin-left: 17.4%;
+    height: 45%;
+    width: 50%;
 }
 
 #room-specs{
@@ -386,8 +391,38 @@ footer > p:nth-of-type(2){
     color: black !important;
 }
 
-#app-header:hover{
-    cursor: pointer;
+
+#back-btn{
+    font-size: 17px;
+    display: block;
+    margin-left: 17.4%;
+    font-family: Harmonia;
+    font-weight: 600;
+    margin-top: 24px;
 }
+#back-btn:hover{
+    cursor: pointer;
+    
+}
+
+
+@media(max-width: 650px){
+   
+
+    #listing-location{
+        display: none;
+    }
+   
+
+}
+
+@media(max-width: 768px){
+    
+    #listings > li{
+        width: 80%;
+        margin: 3% 10%;
+    }
+}
+
 
 

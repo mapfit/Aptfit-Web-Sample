@@ -75,10 +75,10 @@ function openMarkers(district,poly){
 
    
    if (placesToLive[district]){
-        // if(!listOpen){
-        //     styleBtn.click()
-        //     listOpen = true;
-        // }
+        if(!listOpen){
+            styleBtn.click()
+            listOpen = true;
+        }
         console.log(currentBounds);
         
         
@@ -104,7 +104,7 @@ function openMarkers(district,poly){
 
             let price = element.price
             let icon = L.divIcon({className:"divity", iconUrl: './images/pngs/black.png', html: '<img class="markerImg" src="./images/pngs/black.png" />' + `<span>${marker.price}</span>`})
-            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div><img height = 67 width= 67 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD | 1BA | 700SF</span></div></div>`})
+            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div><img height = 67 width= 67 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD <d>|</d> 1BA <d>|</d> 700SF</span></div></div>`})
             marker.setIcon(icon);
             
         
@@ -121,35 +121,37 @@ function openMarkers(district,poly){
             rooms.innerHTML = "1 BD <d>|</d> 1BA <d>|</d> 700 SF "
             listImage.src = "./images/pngs/apt.jpg"
             listImage.style.width = "100%";
-            listImage.style.height = "50%";
+            listImage.style.height = "64%";
             
 
             listItem.addEventListener("click", function(e){
                 if(lastListItem.length > 0){
-                   
-                    listItem.childNodes[0].classList.remove('clickable');
+                    lastListItem[0].childNodes[0].classList.remove('clickable');
                     lastListItem = [];
                 }
 
-                if(detailBuildingArr > 0){
+                if(detailBuildingArr.length > 0){
                     detailBuildingArr.forEach(function(element){
                         detailMap.removeLayer(element)
                     })
                 }
 
-                if(detailMarkerArr > 0){
+                if(detailMarkerArr.length > 0){
                     detailMarkerArr.forEach(function(element){
                         detailMap.removeLayer(element);
                     })
                 }
 
-                if(detailPolyArr > 0 ){
+                if(detailPolyArr.length > 0 ){
                     detailPolyArr.forEach(function(element){
                         detailMap.removeLayer(element);
                     })
                 }
+
+                detailPolyArr = [];
+                detailBuildingArr = [];
+                detailMarkerArr = [];
                 marker.fire("click")
-                this.style.borderTopWidth = "4px"
                 clicked.classList.add("clickable");
                 lastListItem.push(this)
                 detailArea.innerHTML = district + ' , Manhattan, NY, 10011'
@@ -167,13 +169,21 @@ function openMarkers(district,poly){
                 poly.setStyle({color: "black", fillColor:"rgba(74, 74, 74, 0.15)"})
                 app.style.display = "none";
                 detailPage.style.display = "block";
-                detailMap = mapfit.MapView('detail-map', {theme: 'grayscale'});
-                detailMap.setRecenterButtonEnabled(true);
+                if(!detailMapLoaded){
+                    detailMap = mapfit.MapView('detail-map', {theme: 'grayscale'});
+                    detailMap.setRecenterButtonEnabled(true);
+                    detailMapLoaded = true;
+                }
+                detailPolyArr.push(poly);
                 detailMap.setCenter([40.714997, -73.985367], 0)
                 detailMap.setZoom(13);
                 detailMap.addPolygon(poly)
                 detailMap.addMarker(detailMarker);
-               
+                console.log("this is the detail Page Marker location", detailMarker)
+                detailMarker.on("add",function(){
+                    detailMap.flyTo(detailMarker._latlng, 16);
+                })
+                
 
             })
             listItem.appendChild(clicked);
@@ -211,7 +221,7 @@ function openMarkers(district,poly){
                         }
                         if(lastListItem.length > 0){
                             lastListItem[0].childNodes[0].classList.remove('clickable');
-                            lastListItem = [];
+                            lastListItem=[];
                         }
                         map.flyTo(marker._latlng, 16);
                         clicked.classList.add("clickable");
