@@ -104,7 +104,7 @@ function openMarkers(district,poly){
 
             let price = element.price
             let icon = L.divIcon({className:"divity", iconUrl: './images/pngs/black.png', html: '<img class="markerImg" src="./images/pngs/black.png" />' + `<span>${marker.price}</span>`})
-            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div><img height = 95 width=95 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD | 1BA | 700SF</span></div></div>`})
+            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div><img height = 67 width= 67 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD | 1BA | 700SF</span></div></div>`})
             marker.setIcon(icon);
             
         
@@ -115,16 +115,19 @@ function openMarkers(district,poly){
             let listHeader = document.createElement('h3');
             let neighborhood = document.createElement('span');
             let rooms = document.createElement('span');
+            let clicked = document.createElement('div');
             listHeader.innerText = element.location
             neighborhood.innerHTML = "Chelsea, Manhattan"
-            rooms.innerHTML = "1 BD | 1BA | 700 SF "
+            rooms.innerHTML = "1 BD <d>|</d> 1BA <d>|</d> 700 SF "
             listImage.src = "./images/pngs/apt.jpg"
             listImage.style.width = "100%";
             listImage.style.height = "50%";
+            
 
             listItem.addEventListener("click", function(e){
                 if(lastListItem.length > 0){
-                    lastListItem[0].style.borderTopColor = "#ffff"
+                   
+                    listItem.childNodes[0].classList.remove('clickable');
                     lastListItem = [];
                 }
 
@@ -147,7 +150,7 @@ function openMarkers(district,poly){
                 }
                 marker.fire("click")
                 this.style.borderTopWidth = "4px"
-                this.style.borderTopColor = "#4353ff"
+                clicked.classList.add("clickable");
                 lastListItem.push(this)
                 detailArea.innerHTML = district + ' , Manhattan, NY, 10011'
                 listingLocation.innerHTML = element.location
@@ -173,6 +176,7 @@ function openMarkers(district,poly){
                
 
             })
+            listItem.appendChild(clicked);
             listItem.appendChild(listImage);
             listItem.appendChild(listHeader);
             listItem.appendChild(neighborhood);
@@ -206,12 +210,11 @@ function openMarkers(district,poly){
                             marker.buildingPolygon.setStyle({color: "#8a94ff", fillColor: "rgba(67, 83, 255, 0.1)"})
                         }
                         if(lastListItem.length > 0){
-                            lastListItem[0].style.borderTopColor = "#ffff"
+                            lastListItem[0].childNodes[0].classList.remove('clickable');
                             lastListItem = [];
                         }
                         map.flyTo(marker._latlng, 16);
-                        listItem.style.borderTopWidth = "4px"
-                        listItem.style.borderTopColor = "#4353ff"
+                        clicked.classList.add("clickable");
                         lastListItem.push(listItem)
                         break;
                 }
