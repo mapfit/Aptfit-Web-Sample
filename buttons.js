@@ -69,4 +69,6 @@ backBtn.addEventListener("click",function(){
     detailPage.style.display = "none"
     app.style.display = "flex"
     listingLocation.innerHTML = ""
+    document.getElementById("second-bar").style.display = "block";
+    map.invalidateSize();
 })

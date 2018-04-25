@@ -97,15 +97,17 @@ d{
 }
 
 #top-bar{
-    padding: 0.75rem 0.75rem;
+    padding: 1rem;
     border: solid 1px #e8eaeb;
-    min-height: 50px;
+    min-height: 60px;
+    height: auto;
 }
 
 #second-bar{
-    padding: 0.65rem 0.65rem;
+    padding: 0.75rem 0.75rem;
     border: solid 1px #e8eaeb;
     min-height: 50px;
+    height: auto;
 }
 
 #second-bar > div > h2{
@@ -207,6 +209,11 @@ d{
     border-radius: 6px;
     border: solid 0.5px #e8eaeb;
     position: relative;
+}
+
+#listings > li:hover {
+    box-shadow: 0 0 5px 0 rgba(19, 40, 54, 0.2);
+
 }
 
 #listings > li > .clickable{
@@ -363,7 +370,7 @@ footer > p:nth-of-type(2){
 }
 
 #detail-map{
-    height: 45%;
+    height: 40%;
     width: 50%;
     margin: 0 auto;
     margin-bottom: 142px;
@@ -373,7 +380,7 @@ footer > p:nth-of-type(2){
 #detail-image{
     display: block;
     margin-left: 17.4%;
-    height: 45%;
+    height: 40%;
     width: 50%;
 }
 
@@ -404,6 +411,27 @@ footer > p:nth-of-type(2){
     cursor: pointer;
     
 }
+
+.list-price{
+    background-image: url('images/pngs/list-price.png');
+    background-size: cover ;
+    width: 68px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 300;
+    color: white;
+    font-family: Harmonia;
+    font-weight: normal;
+}
+
+.list-price > p{
+    margin: auto;
+    text-align: center;
+}
+
+
 
 
 @media(max-width: 650px){

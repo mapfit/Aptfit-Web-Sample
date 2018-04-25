@@ -116,13 +116,17 @@ function openMarkers(district,poly){
             let neighborhood = document.createElement('span');
             let rooms = document.createElement('span');
             let clicked = document.createElement('div');
+            let priceTag = document.createElement('div');
+            let listPrice = document.createElement('p');
             listHeader.innerText = element.location
             neighborhood.innerHTML = "Chelsea, Manhattan"
             rooms.innerHTML = "1 BD <d>|</d> 1BA <d>|</d> 700 SF "
             listImage.src = "./images/pngs/apt.jpg"
             listImage.style.width = "100%";
             listImage.style.height = "64%";
-            
+            priceTag.classList.add("list-price");
+            listPrice.innerHTML = element.price
+            priceTag.appendChild(listPrice);
 
             listItem.addEventListener("click", function(e){
                 if(lastListItem.length > 0){
@@ -168,6 +172,7 @@ function openMarkers(district,poly){
                 })
                 poly.setStyle({color: "black", fillColor:"rgba(74, 74, 74, 0.15)"})
                 app.style.display = "none";
+                document.getElementById("second-bar").style.display = "none";
                 detailPage.style.display = "block";
                 if(!detailMapLoaded){
                     detailMap = mapfit.MapView('detail-map', {theme: 'grayscale'});
@@ -187,6 +192,7 @@ function openMarkers(district,poly){
 
             })
             listItem.appendChild(clicked);
+            listItem.appendChild(priceTag);
             listItem.appendChild(listImage);
             listItem.appendChild(listHeader);
             listItem.appendChild(neighborhood);
