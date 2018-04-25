@@ -220,6 +220,7 @@ body,html{
 }
 
 
+
 .divity > img{
    position: relative;
    height: 40px; 
@@ -238,8 +239,7 @@ body,html{
     position: absolute;
     min-width: 400px;
     width: auto;
-    /* padding: 7px;
-    padding-left: 14px; */
+    padding: 14px;
     box-shadow: 0 0 5px 0 rgba(19, 40, 54, 0.2);
     border-radius: 6px;
     background-color: white;
@@ -248,15 +248,13 @@ body,html{
 }
 
 .divity > div > img{
-    display: inline-block;
-    margin-bottom: 20px; 
-    margin-left: 14px;
+    float: left;
 }
 .divity > div > div{
     display: inline-block;
     position: relative;
     margin-left: 20px;
-    margin-top: 15px;
+    width: 60%;
 }
 
 .divity > div > div > span{

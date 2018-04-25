@@ -75,10 +75,10 @@ function openMarkers(district,poly){
 
    
    if (placesToLive[district]){
-        if(!listOpen){
-            styleBtn.click()
-            listOpen = true;
-        }
+        // if(!listOpen){
+        //     styleBtn.click()
+        //     listOpen = true;
+        // }
         console.log(currentBounds);
         
         
