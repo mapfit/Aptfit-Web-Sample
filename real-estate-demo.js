@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(){
     mapfit.apikey = "591dccc4e499ca0001a4c6a423229dd9f27f4b999d8353e974feb679"
     map = mapfit.MapView('mapfit', {theme: 'grayscale'});
-    
+    let center = mapfit.LatLng([40.714997,-73.985367]);
+    map.setCenter(center);
     map.setRecenterButtonEnabled(true);
-    map.setCenter([40.714997, -73.985367], 0)
     map.setZoom(13);
+    detailMap = mapfit.MapView('detail-map', {theme: 'grayscale'});
+    let position = mapfit.LatLng([40.714997, -73.985367])
+    detailMap.setCenter(position);
+    detailMap.setRecenterButtonEnabled(true);
     let neighborhoods = []
     let filteredNeighborhoods = []
     let chel = false;
@@ -79,7 +83,7 @@ function openMarkers(district,poly){
             styleBtn.click()
             listOpen = true;
         }
-        console.log(currentBounds);
+       map.fitBounds(currentBounds);
         
         
         placesToLive[district].forEach(function(element){
@@ -104,7 +108,7 @@ function openMarkers(district,poly){
 
             let price = element.price
             let icon = L.divIcon({className:"divity", iconUrl: './images/pngs/black.png', html: '<img class="markerImg" src="./images/pngs/black.png" />' + `<span>${marker.price}</span>`})
-            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div><img height = 67 width= 67 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD <d>|</d> 1BA <d>|</d> 700SF</span></div></div>`})
+            let iconClicked = L.divIcon({className:"divity", iconUrl: './images/pngs/blue.png', html: '<img src="./images/pngs/blue.png"/>' + `<span>${marker.price}</span>` + `<div id="div-list"><img height = 67 width= 67 src="./images/pngs/apt.jpg"/><div><span>${element.location}</span><span>${district}, Manhattan</span></span>1BD <d>|</d> 1BA <d>|</d> 700SF</span></div></div>`})
             marker.setIcon(icon);
             
         
@@ -175,14 +179,10 @@ function openMarkers(district,poly){
                 app.style.display = "none";
                 document.getElementById("second-bar").style.display = "none";
                 detailPage.style.display = "block";
-                if(!detailMapLoaded){
-                    detailMap = mapfit.MapView('detail-map', {theme: 'grayscale'});
-                    detailMap.setRecenterButtonEnabled(true);
-                    detailMapLoaded = true;
-                }
                 detailPolyArr.push(poly);
-                detailMap.setCenter([40.714997, -73.985367], 0)
-                detailMap.setZoom(13);
+                let position = mapfit.LatLng([40.714997, -73.985367])
+                detailMap.setCenter(position);
+                detailMap.invalidateSize();
                 detailMap.addPolygon(poly)
                 detailMap.addMarker(detailMarker);
                 console.log("this is the detail Page Marker location", detailMarker)
@@ -230,9 +230,16 @@ function openMarkers(district,poly){
                             lastListItem[0].childNodes[0].classList.remove('clickable');
                             lastListItem=[];
                         }
+
+
                         map.flyTo(marker._latlng, 16);
                         clicked.classList.add("clickable");
+                        listItem.scrollIntoView();
                         lastListItem.push(listItem)
+
+                        document.getElementById("div-list").addEventListener("click",function(){
+                            listItem.click();
+                        })
                         break;
                 }
             })
