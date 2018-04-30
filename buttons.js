@@ -19,8 +19,6 @@ styleBtn.addEventListener("click", function(){
             document.getElementById('mapfit').classList.add("d-md-flex")
             document.getElementById("style-type").innerHTML = "Map View" 
             map.invalidateSize();
-            map.setCenter([40.714997, -73.985367], 0)
-            map.setLatLngBounds(currentBounds,80,80);
         }else{ 
             document.getElementById('view-type').classList.add("d-lg-none");
             document.getElementById('view-type').classList.add("d-md-none");
@@ -44,6 +42,7 @@ styleBtn.addEventListener("click", function(){
         };
 
         if(document.getElementById("style-img").src.includes("pngs/listBtn.png")){ 
+            console.log("in the style btn clicking");
             document.getElementById("style-img").src = "./images/pngs/mapviewBtn.png" 
         }else{ 
             document.getElementById("style-img").src = "./images/pngs/listBtn.png"
