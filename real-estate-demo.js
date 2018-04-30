@@ -129,6 +129,7 @@ function openMarkers(district,poly){
             priceTag.appendChild(listPrice);
 
             listItem.addEventListener("click", function(e){
+                this.scrollIntoView();
                 if(lastListItem.length > 0){
                     lastListItem[0].childNodes[0].classList.remove('clickable');
                     lastListItem = [];

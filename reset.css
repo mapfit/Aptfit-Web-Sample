@@ -125,12 +125,12 @@ d{
     font-size: 12px;
 }
 #top-bar > div > span{
-    color: #9a9ba3;
+    color: #4a4a4a;
     font-size: 19px;
 }
 #app-header{
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 0.5px;
     color: #000000;
     font-family: Harmonia;
