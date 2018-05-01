@@ -79,10 +79,10 @@ function openMarkers(district,poly){
 
    
    if (placesToLive[district]){
-        if(!listOpen){
-            styleBtn.click()
-            listOpen = true;
-        }
+        // if(!listOpen){
+        //     styleBtn.click()
+        //     listOpen = true;
+        // }
        map.fitBounds(currentBounds);
         
         
@@ -181,13 +181,13 @@ function openMarkers(district,poly){
                 detailPage.style.display = "block";
                 detailPolyArr.push(poly);
                 let position = mapfit.LatLng([40.714997, -73.985367])
-                detailMap.setCenter(position);
                 detailMap.invalidateSize();
+                detailMap.setCenter(position);
                 detailMap.addPolygon(poly)
                 detailMap.addMarker(detailMarker);
                 console.log("this is the detail Page Marker location", detailMarker)
                 detailMarker.on("add",function(){
-                    detailMap.flyTo(detailMarker._latlng, 16);
+                    detailMap.panTo(detailMarker._latlng, 16);
                 })
                 
 
