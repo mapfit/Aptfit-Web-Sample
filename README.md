@@ -1,5 +1,5 @@
 ![alt text](./images/pngs/Javascript-Banner.png)
-# Aptfit
+# Aptfit-Javascript
 This sample project is made to demonstrate the usage of Mapfit Javascript SDK. In the project, NYC neighborhood and building polygons are displayed on the map.
 ## What's Included
   * Ability to manipulate polygon styles.
