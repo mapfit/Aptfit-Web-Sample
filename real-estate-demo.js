@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     map.setCenter(center);
     map.setRecenterButtonEnabled(true);
     map.setZoom(13);
-    detailMap = mapfit.MapView('detail-map', {theme:'grayscale'});
+    detailMap = mapfit.MapView('detail-map', {theme:'./transitNY.yaml'});
     let position = mapfit.LatLng([40.714997, -73.985367])
     detailMap.setCenter(position);
     detailMap.setRecenterButtonEnabled(true);

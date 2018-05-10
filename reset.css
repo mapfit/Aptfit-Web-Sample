@@ -110,7 +110,11 @@ d{
     height: auto;
 }
 
-
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
 
 #second-bar > div > h2{
@@ -121,17 +125,19 @@ d{
     font-family: Harmonia;
     font-weight: 600;
     margin-right: 1rem;
-    vertical-align: middle;
-    margin-bottom: 0;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 #second-bar > div > span{
     color: #9a9ba3;
     font-size: 12px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     display: inline-block;
     font-family: Harmonia;
     font-weight: 600;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 #top-bar > div > span{
     color: #9a9ba3;
