@@ -100,6 +100,7 @@ function openMarkers(district,poly){
             //     iconSize: [70, 38],
             //     iconAnchor: [35, 35]
             // })
+
             let markImg = document.createElement("img") 
             markImg.src =  './images/pngs/black.png'
             markImg.addEventListener("click", function(){
@@ -185,7 +186,6 @@ function openMarkers(district,poly){
                 detailMap.setCenter(position);
                 detailMap.addPolygon(poly)
                 detailMap.addMarker(detailMarker);
-                console.log("this is the detail Page Marker location", detailMarker)
                 detailMarker.on("add",function(){
                     detailMap.panTo(detailMarker._latlng, 16);
                 })
