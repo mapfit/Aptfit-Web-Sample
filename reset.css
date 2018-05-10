@@ -110,6 +110,9 @@ d{
     height: auto;
 }
 
+
+
+
 #second-bar > div > h2{
     display: inline-block;
     font-size: 14px;
@@ -117,7 +120,6 @@ d{
     color: #000000;
     font-family: Harmonia;
     font-weight: 600;
-    margin-top: 5px;
     margin-right: 1rem;
     vertical-align: middle;
     margin-bottom: 0;
